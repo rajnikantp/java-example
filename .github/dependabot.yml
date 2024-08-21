@@ -5,6 +5,13 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 10
+    ignore:
+      # Ignore all updates for specific dependencies
+      - dependency-name: "org.springframework.boot.spring-boot-starter-parent"
+        # Ignore update for specific version
+        versions: ["3.x"]
+        ## OR ignore patch version
+        ## update-types : ["version-update:semver-patch"] # possible for minior version as well
   - package-ecosystem: "github-actions"
     directory: ".github/workflows/"
     schedule:
